@@ -27,6 +27,7 @@ export default class App extends Component {
 
             // TODO A new contacts array, with the deleted contact being removed, is computed above. But how do we make this change being rendered? Code for b) goes here
 
+            this.setState({contacts: contactsArrayNew})
         }
         // ... imagine some logic that removes a contact object from the contacts list
     }
@@ -38,6 +39,8 @@ export default class App extends Component {
                         return (
                             <Contact
                                 // TODO How can we pass the name and image url to the Contact component? code for a) goes here
+                                name={contactData.name}
+                                imgUrl={contactData.img}
                                 onDelete={(e: any)=>{this.deleteContact(contactData)}}
                             />
                         )
